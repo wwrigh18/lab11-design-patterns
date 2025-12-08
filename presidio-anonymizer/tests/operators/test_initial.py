@@ -1,4 +1,7 @@
+import pytest
+
 from presidio_anonymizer.operators import Initial
+from presidio_anonymizer.entities import InvalidParamError
 
 def test_correct_name():
     assert Initial().operator_name() == "initial"

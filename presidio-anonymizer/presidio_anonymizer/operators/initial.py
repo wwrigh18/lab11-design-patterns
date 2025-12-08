@@ -4,9 +4,20 @@ from presidio_anonymizer.operators import Operator, OperatorType
 
 class Initial(Operator):
     
-    def operate(self, text: str = None, params: Dict = None) -> str:
+    def operate(self, text: str = None) -> str:
         """:return: capital letters separated by a period and a space"""
-        return ""
+        words = text.split(" ")
+        initials = []
+        for x in words:
+            initials.append(x[0])
+
+        str = ""
+        for i in range(len(initials)):
+            str += (initials[i] + ".")
+            if i < len(initials) - 1:
+                str += " "
+        
+        return str
 
     def validate(self, params: Dict = None) -> None:
         """Initial does not require any parameters so no validation is needed."""
