@@ -10,11 +10,18 @@ class Initial(Operator):
         initials = []
         for x in words:
             if len(x) != 0:
-                initials.append(x[0])
+                str = ""
+                for i in range(len(x)):
+                    if x[i].isalnum():
+                        str += x[i].capitalize()
+                        break
+                    str += x[i]
+                initials.append(str)
 
         str = ""
         for i in range(len(initials)):
             str += (initials[i] + ".")
+
             if i < len(initials) - 1:
                 str += " "
         
