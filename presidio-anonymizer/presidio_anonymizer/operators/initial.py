@@ -9,7 +9,8 @@ class Initial(Operator):
         words = text.split(" ")
         initials = []
         for x in words:
-            initials.append(x[0])
+            if len(x) != 0:
+                initials.append(x[0])
 
         str = ""
         for i in range(len(initials)):

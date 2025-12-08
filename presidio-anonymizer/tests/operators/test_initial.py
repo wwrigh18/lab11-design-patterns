@@ -7,10 +7,13 @@ def test_correct_name():
     assert Initial().operator_name() == "initial"
 
 @pytest.mark.parametrize(
+    # fmt: off
     "input_text, initials",
     [
         ("John Smith", "J. S."),
+        ("     Eastern    Michigan   University ", "E. M. U.")
     ],
+    # fmt: on
 )
 def test_given_value_for_initial(input_text, initials):
     text = Initial().operate(input_text)
