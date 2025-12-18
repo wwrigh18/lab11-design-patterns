@@ -13,17 +13,19 @@ From the <module> sample.py (line 35),
 to the main method in sample.py (line 29), 
 to the run_anonymizer method in the sample.py (line 13)
 to the anonymize method in AnonymizerEngine Class (line 104)
-[complete the call stack here]
+to the _operate method in the EngineBase Class (line 54)
+to the __operate_on_text method in the EngineBase Class (line 86)
+to the create_operator_class method in the OperatorsFactory Class (line 133)
 ```
 
 * How many if/elif branches are used in selecting the operator?
-*Put your answer here*
+Technically, none; The only elif branches leading directly to the resturn of the operator are to check that the Dictionary of operator types exists, and that the requested operator is present. 
 
 * What data structure (a Python data type) exactly is used to select the operator?
-*Put your answer here*
+An Enum to pick which type of operator (anonymizer or deanonymizer) to look for, which returns a Dictionary of options of that type, and then the string name of the operator type us used to pick it out.
 
 * Explain how "Strategy" design pattern is reflected here.
-
+Every different operator type is its own Class, and they each do the same base "operate" functionality a very different way.
 
 ---
 
