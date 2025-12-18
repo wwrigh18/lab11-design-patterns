@@ -4,7 +4,7 @@ from presidio_anonymizer.operators import Operator, OperatorType
 
 class Initial(Operator):
     
-    def operate(self, text: str = None) -> str:
+    def operate(self, text: str = None, params: Dict = None) -> str:
         """:return: capital letters separated by a period and a space"""
         words = text.split(" ")
         initials = []
